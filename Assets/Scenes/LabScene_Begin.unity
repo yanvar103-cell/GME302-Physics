@@ -33449,6 +33449,7 @@ GameObject:
   - component: {fileID: 1275766690}
   - component: {fileID: 1275766692}
   - component: {fileID: 1275766693}
+  - component: {fileID: 1275766694}
   m_Layer: 0
   m_Name: Rover
   m_TagString: LabItem
@@ -33525,6 +33526,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1275766694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275766689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921837245ec7de34593600a556ccd899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wheels:
+  - collider: {fileID: 1803474605}
+    mesh: {fileID: 309084351}
+  - collider: {fileID: 1714407785}
+    mesh: {fileID: 767669256}
+  - collider: {fileID: 923914077}
+    mesh: {fileID: 1811889220}
+  - collider: {fileID: 1140826685}
+    mesh: {fileID: 2010291527}
 --- !u!1 &1285749005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a9869a2bcd06b4348b0bba10b6dcf06b,
@@ -37588,7 +37610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437491078}
   m_Layer: 0
-  m_Name: Wheels
+  m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
