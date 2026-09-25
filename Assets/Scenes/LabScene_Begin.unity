@@ -19148,17 +19148,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8512b22512b8c43378d97167bc140ba0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8512b22512b8c43378d97167bc140ba0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8512b22512b8c43378d97167bc140ba0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.181
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8512b22512b8c43378d97167bc140ba0,
         type: 3}
@@ -19209,6 +19209,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8512b22512b8c43378d97167bc140ba0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1748325686}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8512b22512b8c43378d97167bc140ba0,
         type: 3}
       insertIndex: -1
@@ -48176,7 +48180,19 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!114 &1748325686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748325676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0ed82c12a21554d899b96d762cde11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1751354814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a9869a2bcd06b4348b0bba10b6dcf06b,
