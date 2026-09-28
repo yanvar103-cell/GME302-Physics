@@ -5,6 +5,7 @@ using UnityEngine;
 public class Launcher : MonoBehaviour
 {
     //reference to the simulatedPhysics class
+    [SerializeField] private SimulatedPhysics _simulatedPhysics;
     
     //create a reference to the package prefab
     [SerializeField] private AirmailPackage _airmailPackagePrefab;
@@ -14,12 +15,15 @@ public class Launcher : MonoBehaviour
 
     [SerializeField] private LabComplete _labComplete;
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         //call the simulated trajectory function from simulatedPhysics class
-            //pass in the prefab to instantiate, the position and the direction multiply by the force
-        
+        //pass in the prefab to instantiate, the position and the direction multiply by the force
+        _simulatedPhysics.SimulatedTrajectory(_airmailPackagePrefab, transform.position, transform.forward * _force);
+    }
+
+    void Update()// Update is called once per frame
+    {
         //get the input from player
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -49,13 +49,32 @@ public class SimulatedPhysics : MonoBehaviour
     }
 
     //reference for the line renderer
+    [SerializeField] private LineRenderer _line;
+    [SerializeField] private int _maxPhysicsIterations;
 
     //create a method to simulate the trajectory
+    public void SimulatedTrajectory(AirmailPackage airmailPackagePrefab, Vector3 position, Vector3 velocity)
+    {
         //reference for a simulated object(airmailPackage)
+        var _simulatedObject = Instantiate(airmailPackagePrefab, position, Quaternion.identity);
         //disable renderer for simulated object
+        _simulatedObject.GetComponent<Renderer>().enabled = false;
         //move this simulated object to the simulatedPhysics scene
+        SceneManager.MoveGameObjectToScene(_simulatedObject.gameObject, _simulatedScene);
         //apply velocity to the simulated object using Init function
+        _simulatedObject.Init(velocity);
 
-
-
+        //set the amout of points in the line renderer component
+        _line.positionCount = _maxPhysicsIterations;
+        //in for loop, set the position of the line renderer based on a max physics iterations value
+        for(int i = 0; i < _maxPhysicsIterations; i++)
+        {
+            //simulate the physics scene
+            _physicsScene.Simulate(Time.fixedDeltaTime * 5);
+            //set the positions of each point on the line renderer using the simulated object position
+            _line.SetPosition(i, _simulatedObject.transform.position);
+        }
+        //destroy the simulated object
+        Destroy(_simulatedObject.gameObject);
+    }
 }
